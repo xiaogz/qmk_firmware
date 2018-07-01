@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------------------------------------------------------------|
    * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift | Up|PgDn|
    * |----------------------------------------------------------------|
-   * |Ctrl|Win |Alt |        Space          |Alt|Ctrl| FN|Lef|Dow|Rig |
+   * |Ctrl|Win |Alt |        Space          | FN|Alt|Ctrl| Lef|Dow|Rig|
    * `----------------------------------------------------------------'
    */
 [_BL] = KEYMAP_ANSI(
@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC, KC_RBRC,KC_BSLS,KC_DEL, \
   KC_LCTL, KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,         KC_ENT,KC_PGUP,  \
   KC_LSFT,         KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,   KC_RSFT,KC_UP,KC_PGDN, \
-  KC_LCTL, KC_LGUI,KC_LALT, KC_SPC, KC_RALT,KC_RCTRL, TT(_FL),  KC_LEFT,KC_DOWN,KC_RGHT),
+  KC_LCTL, KC_LGUI,KC_LALT, KC_SPC, TT(_FL), KC_RALT,KC_RCTRL, KC_LEFT,KC_DOWN,KC_RGHT),
 
   /* Keymap _FL: Function Layer
    * ,----------------------------------------------------------------.
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------------------------------------------------------------|
    * |         |MUT|VU-|VU+|BLR|BL |BL-|BL+|F14 |F15 |   |McL|MsU|End | * see below for F14 & F15 note
    * |----------------------------------------------------------------|
-   * |    |    |    |                      |Menu|McR |   |MsL|MsD|MsR |
+   * |    |    |    |                      |    |McR |   |MsL|MsD|MsR |
    * `----------------------------------------------------------------'
    * QMK can't control laptop screen brightness so f14 & 15 will
    *  call gnome-configured screen brightness controls; need xdotool package
@@ -52,5 +52,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   PASS_UNDER,KC_PGUP, KC_UP, KC_PGDN,PASS_UNDER, PASS_UNDER,PASS_UNDER,PASS_UNDER,PASS_UNDER,PASS_UNDER,KC_PSCR,PASS_UNDER,PASS_UNDER, PASS_UNDER,KC_INS, \
   KC_CAPS,KC_LEFT,KC_DOWN,KC_RIGHT,PASS_UNDER,PASS_UNDER,PASS_UNDER,PASS_UNDER,PASS_UNDER,PASS_UNDER,PASS_UNDER,PASS_UNDER,PASS_UNDER,KC_HOME, \
   PASS_UNDER,KC_MUTE,KC_VOLD,KC_VOLU, BL_BRTG, BL_TOGG, BL_DEC, BL_INC,KC_F14,KC_F15,PASS_UNDER,KC_BTN1, KC_MS_U, KC_END, \
-  PASS_UNDER,PASS_UNDER,PASS_UNDER,                 PASS_UNDER,               KC_MENU,KC_BTN2,PASS_UNDER,KC_MS_L,KC_MS_D, KC_MS_R),
+  PASS_UNDER,PASS_UNDER,PASS_UNDER,                 PASS_UNDER,               PASS_UNDER,KC_BTN2,PASS_UNDER,KC_MS_L,KC_MS_D, KC_MS_R),
 };
